@@ -3,15 +3,15 @@ package com.cxl.iot.collector;
 import com.cxl.iot.entity.DingTalkOutgoingRequest;
 import com.cxl.iot.entity.DingTalkRobotResult;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Objects;
 
 @Component
 public class TemperatureCollector {
@@ -23,6 +23,7 @@ public class TemperatureCollector {
 
     /**
      * 获取树莓派温度
+     *
      * @param outgoingRequest 钉钉请求内容
      * @return DingTalkRobotResult
      * @throws IOException IO异常
