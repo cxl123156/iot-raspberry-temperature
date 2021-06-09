@@ -12,6 +12,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 @Component
 public class TemperatureCollector {
@@ -53,21 +54,12 @@ public class TemperatureCollector {
         String msg = dingTalkMsgTemplate.replace("${temperatureValue}", String.valueOf(templateValue)).replace("${time}", time);
         DingTalkRobotResult.MarkDown markDown = DingTalkRobotResult.MarkDown.builder().text(msg).title("树莓派监控室温").build();
         DingTalkRobotResult.At at = DingTalkRobotResult.At.builder().build();
-        return DingTalkRobotResult.builder().msgtype("markdown").markDown(markDown).at(at).build();
+        return DingTalkRobotResult.builder().msgType("markdown").markDown(markDown).at(at).build();
     }
 
     private String getMsgTemplate() throws IOException {
-//        ClassPathResource classPathResource = new ClassPathResource("msg_template");
-        File file = new File("./msg_template");
-//        String path = Objects.requireNonNull(this.getClass().getClassLoader().getResource("/msg_template")).getPath();
-//        InputStream inputStream = classPathResource.getInputStream();
-//        byte[] read = new byte[2048];
-//        StringBuilder result = new StringBuilder();
-//        while (inputStream.read(read)>0){
-//            result.append(new String(read));
-//        }
-//        System.out.println(result.toString());
-        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
+        String path = Objects.requireNonNull(this.getClass().getClassLoader().getResource("msg_template")).getPath();
+        RandomAccessFile randomAccessFile = new RandomAccessFile(path, "rw");
         FileChannel fileChannel = randomAccessFile.getChannel();
         ByteBuffer byteBuffer = ByteBuffer.allocate(2048);
         if (fileChannel != null) {

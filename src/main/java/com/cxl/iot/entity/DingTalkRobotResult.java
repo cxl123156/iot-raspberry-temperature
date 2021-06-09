@@ -1,5 +1,6 @@
 package com.cxl.iot.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
 
@@ -30,8 +31,10 @@ public class DingTalkRobotResult {
     /**
      * 首屏会话透出的展示内容。
      */
-    private String msgtype;
+    @JsonProperty("msgtype")
+    private String msgType;
 
+    @JsonProperty("markdown")
     private MarkDown markDown;
 
     private At at;

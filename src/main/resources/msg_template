@@ -1,1 +1,1 @@
-####树莓派监控室温 @150XXXXXXXX \n> ${temperatureValue}度 ###### ${time}发布
+#### 树莓派监控室温:${temperatureValue}度

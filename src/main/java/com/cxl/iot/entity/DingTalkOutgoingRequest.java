@@ -2,6 +2,8 @@ package com.cxl.iot.entity;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Tolerate;
 
 import java.util.List;
 
@@ -37,6 +39,10 @@ import java.util.List;
 @Data
 @Builder
 public class DingTalkOutgoingRequest {
+
+    @Tolerate
+    public DingTalkOutgoingRequest() {
+    }
 
     /**
      * 加密的会话ID。
@@ -135,6 +141,10 @@ public class DingTalkOutgoingRequest {
     @Builder
     public static class AtUsers{
 
+        @Tolerate
+        public AtUsers() {
+        }
+
         /**
          * 加密的发送者ID。
          */
@@ -149,6 +159,10 @@ public class DingTalkOutgoingRequest {
     @Data
     @Builder
     public static class Text{
+
+        @Tolerate
+        public Text() {
+        }
 
         /**
          * 消息文本
