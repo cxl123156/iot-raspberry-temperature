@@ -58,8 +58,8 @@ public class TemperatureCollector {
     }
 
     private String getMsgTemplate() throws IOException {
-        String path = Objects.requireNonNull(this.getClass().getClassLoader().getResource("msg_template")).getPath();
-        RandomAccessFile randomAccessFile = new RandomAccessFile(path, "rw");
+        File file = new File("./msg_template");
+        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
         FileChannel fileChannel = randomAccessFile.getChannel();
         ByteBuffer byteBuffer = ByteBuffer.allocate(2048);
         if (fileChannel != null) {
