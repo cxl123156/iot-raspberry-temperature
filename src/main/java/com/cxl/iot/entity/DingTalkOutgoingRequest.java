@@ -2,38 +2,37 @@ package com.cxl.iot.entity;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.experimental.Tolerate;
 
 import java.util.List;
 
 /**
  * {
- *     "conversationId": "xxx",
- *     "atUsers": [
- *         {
- *             "dingtalkId": "xxx",
- *             "staffId":"xxx"
- *         }
- *     ],
- *     "chatbotCorpId": "dinge8a565xxxx",
- *     "chatbotUserId": "$:LWCP_v1:$Cxxxxx",
- *     "msgId": "msg0xxxxx",
- *     "senderNick": "杨xx",
- *     "isAdmin": true,
- *     "senderStaffId": "user123",
- *     "sessionWebhookExpiredTime": 1613635652738,
- *     "createAt": 1613630252678,
- *     "senderCorpId": "dinge8a565xxxx",
- *     "conversationType": "2",
- *     "senderId": "$:LWCP_v1:$Ff09GIxxxxx",
- *     "conversationTitle": "机器人测试-TEST",
- *     "isInAtList": true,
- *     "sessionWebhook": "https://oapi.dingtalk.com/robot/sendBySession?session=xxxxx",
- *     "text": {
- *         "content": " 你好"
- *     },
- *     "msgtype": "text"
+ * "conversationId": "xxx",
+ * "atUsers": [
+ * {
+ * "dingtalkId": "xxx",
+ * "staffId":"xxx"
+ * }
+ * ],
+ * "chatbotCorpId": "dinge8a565xxxx",
+ * "chatbotUserId": "$:LWCP_v1:$Cxxxxx",
+ * "msgId": "msg0xxxxx",
+ * "senderNick": "杨xx",
+ * "isAdmin": true,
+ * "senderStaffId": "user123",
+ * "sessionWebhookExpiredTime": 1613635652738,
+ * "createAt": 1613630252678,
+ * "senderCorpId": "dinge8a565xxxx",
+ * "conversationType": "2",
+ * "senderId": "$:LWCP_v1:$Ff09GIxxxxx",
+ * "conversationTitle": "机器人测试-TEST",
+ * "isInAtList": true,
+ * "sessionWebhook": "https://oapi.dingtalk.com/robot/sendBySession?session=xxxxx",
+ * "text": {
+ * "content": " 你好"
+ * },
+ * "msgtype": "text"
  * }
  */
 @Data
@@ -139,7 +138,7 @@ public class DingTalkOutgoingRequest {
 
     @Data
     @Builder
-    public static class AtUsers{
+    public static class AtUsers {
 
         @Tolerate
         public AtUsers() {
@@ -158,7 +157,7 @@ public class DingTalkOutgoingRequest {
 
     @Data
     @Builder
-    public static class Text{
+    public static class Text {
 
         @Tolerate
         public Text() {

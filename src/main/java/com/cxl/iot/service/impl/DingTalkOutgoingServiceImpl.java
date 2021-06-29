@@ -17,7 +17,7 @@ public class DingTalkOutgoingServiceImpl implements DingTalkOutgoingService {
 
     @Override
     public DingTalkRobotResult dealOutgoing(DingTalkOutgoingRequest request) throws IOException {
-        if (request.getText().getContent().trim().equals("当前家里温度")) {
+        if (request.getText().getContent().trim().equals("温度")) {
             return temperatureCollector.getTemperature(request);
         } else {
             return buildUnknownMsg(request,"抱歉，我还不明白这是什么意思");

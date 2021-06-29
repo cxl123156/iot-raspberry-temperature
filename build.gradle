@@ -29,6 +29,7 @@ dependencies {
     implementation group: 'commons-codec', name: 'commons-codec', version: '1.15'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    compile group: 'io.netty', name: 'netty-all', version: '4.1.65.Final'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
